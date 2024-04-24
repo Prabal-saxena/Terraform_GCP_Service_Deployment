@@ -33,90 +33,90 @@
 #  instance        = google_sql_database_instance.pgsql-instance.name
 #}
 
-#resource "google_monitoring_dashboard" "dashboard" {
-#  project = "cellular-tide-421217"
-#  dashboard_json = <<EOF
-#{
-#  "displayName": "Grid Layout Example",
-#  "gridLayout": {
-#    "columns": "2",
-#    "widgets": [
-#      {
-#        "title": "Widget 1",
-#        "xyChart": {
-#          "dataSets": [{
-#            "timeSeriesQuery": {
-#              "timeSeriesFilter": {
-#                "filter": "metric.type=\"agent.googleapis.com/nginx/connections/accepted_count\"",
-#                "aggregation": {
-#                  "perSeriesAligner": "ALIGN_RATE"
-#                }
-#              },
-#              "unitOverride": "1"
-#            },
-#            "plotType": "LINE"
-#          }],
-#          "timeshiftDuration": "0s",
-#          "yAxis": {
-#            "label": "y1Axis",
-#            "scale": "LINEAR"
-#          }
-#        }
-#      },
-#      {
-#        "text": {
-#          "content": "Widget 2",
-#          "format": "MARKDOWN"
-#        }
-#      },
-#      {
-#        "title": "Widget 3",
-#        "xyChart": {
-#          "dataSets": [{
-#            "timeSeriesQuery": {
-#              "timeSeriesFilter": {
-#                "filter": "metric.type=\"agent.googleapis.com/nginx/connections/accepted_count\"",
-#                "aggregation": {
-#                  "perSeriesAligner": "ALIGN_RATE"
-#                }
-#              },
-#              "unitOverride": "1"
-#            },
-#            "plotType": "STACKED_BAR"
-#          }],
-#          "timeshiftDuration": "0s",
-#          "yAxis": {
-#            "label": "y1Axis",
-#            "scale": "LINEAR"
-#          }
-#        }
-#      }
-#    ]
-#  }
-#}
-#
-#EOF
-#}
+resource "google_monitoring_dashboard" "dashboard" {
+  project = "cellular-tide-421217"
+  dashboard_json = <<EOF
+{
+  "displayName": "Grid Layout Example",
+  "gridLayout": {
+    "columns": "2",
+    "widgets": [
+      {
+        "title": "Widget 1",
+        "xyChart": {
+          "dataSets": [{
+            "timeSeriesQuery": {
+              "timeSeriesFilter": {
+                "filter": "metric.type=\"agent.googleapis.com/nginx/connections/accepted_count\"",
+                "aggregation": {
+                  "perSeriesAligner": "ALIGN_RATE"
+                }
+              },
+              "unitOverride": "1"
+            },
+            "plotType": "LINE"
+          }],
+          "timeshiftDuration": "0s",
+          "yAxis": {
+            "label": "y1Axis",
+            "scale": "LINEAR"
+          }
+        }
+      },
+      {
+        "text": {
+          "content": "Widget 2",
+          "format": "MARKDOWN"
+        }
+      },
+      {
+        "title": "Widget 3",
+        "xyChart": {
+          "dataSets": [{
+            "timeSeriesQuery": {
+              "timeSeriesFilter": {
+                "filter": "metric.type=\"agent.googleapis.com/nginx/connections/accepted_count\"",
+                "aggregation": {
+                  "perSeriesAligner": "ALIGN_RATE"
+                }
+              },
+              "unitOverride": "1"
+            },
+            "plotType": "STACKED_BAR"
+          }],
+          "timeshiftDuration": "0s",
+          "yAxis": {
+            "label": "y1Axis",
+            "scale": "LINEAR"
+          }
+        }
+      }
+    ]
+  }
+}
 
-#resource "google_monitoring_metric_descriptor" "basic" {
-#  project = "cellular-tide-421217"
-#  description = "Daily sales records from all branch stores."
-#  display_name = "metric-descriptor"
-#  type = "custom.googleapis.com/stores/daily_sales"
-#  metric_kind = "GAUGE"
-#  value_type = "DOUBLE"
-#  unit = "{USD}"
-#  labels {
-#    key = "store_id"
-#    value_type = "STRING"
-#    description = "The ID of the store."
-#  }
-#  launch_stage = "BETA"
-#  metadata {
-#    sample_period = "60s"
-#    ingest_delay = "30s"
-#  }
-#}
+EOF
+}
+
+resource "google_monitoring_metric_descriptor" "basic" {
+  project = "cellular-tide-421217"
+  description = "Daily sales records from all branch stores."
+  display_name = "metric-descriptor"
+  type = "custom.googleapis.com/stores/daily_sales"
+  metric_kind = "GAUGE"
+  value_type = "DOUBLE"
+  unit = "{USD}"
+  labels {
+    key = "store_id"
+    value_type = "STRING"
+    description = "The ID of the store."
+  }
+  launch_stage = "BETA"
+  metadata {
+    sample_period = "60s"
+    ingest_delay = "30s"
+  }
+}
 
 resource "google_monitoring_notification_channel" "basic" {
   project = "cellular-tide-421217"
