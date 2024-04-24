@@ -1,3 +1,14 @@
+https://registry.terraform.io/providers/hashicorp/google/latest/docs/resources/monitoring_dashboard
+
+https://registry.terraform.io/providers/hashicorp/google/latest/docs/resources/monitoring_metric_descriptor
+
+https://registry.terraform.io/providers/hashicorp/google/latest/docs/resources/monitoring_notification_channel
+
+https://registry.terraform.io/providers/hashicorp/google/latest/docs/resources/monitoring_alert_policy
+
+https://registry.terraform.io/providers/hashicorp/google/latest/docs/resources/logging_metric.html
+
+
 Custom Dashboard:
 
 ![img_4.png](img_4.png)
